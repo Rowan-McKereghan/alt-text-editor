@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Stack from 'react-bootstrap/Stack';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.css';
+import Bookpage from './Bookpage';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container fluid style={{height: '90vh'}}>
+      <Row align="end">
+        <Col md="auto">
+          <iframe id="book" style={{border: "2px solid black", height: "90vh", width: "50vw"}} 
+          src="https://www.gutenberg.org/cache/epub/73011/pg73011-images.html"></iframe>
+        </Col>
+        <Col>
+          <Stack>
+            <Bookpage/>
+            <InputGroup>
+              <Form.Control placeholder="existing alt text"></Form.Control>
+            </InputGroup>
+            <InputGroup>
+              <Form.Control placeholder="ai suggestion"></Form.Control>
+            </InputGroup>
+            <InputGroup>
+              <Form.Control placeholder="user input"></Form.Control>
+            </InputGroup>
+            <Button>
+                Submit
+            </Button>
+          </Stack>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default App
