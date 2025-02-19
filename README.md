@@ -2,7 +2,7 @@
 Free Ebook Foundation alt text PG react app
 
 
-<!--> 
+<!-- 
             Things to Discuss:
                 Backend Image fetching - url like "https://gutenberg.org/cache/epub/67098/images/" returns HTML file with table
                     - how to access list of images directly?
@@ -14,4 +14,4 @@ Free Ebook Foundation alt text PG react app
                     - list all <img> in <iframe>, then connect those to backend using <img> ID number to update
                 Using Bootstrap for Component Framework
 
-<-->
+-->
