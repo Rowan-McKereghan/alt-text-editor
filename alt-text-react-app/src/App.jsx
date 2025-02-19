@@ -17,7 +17,7 @@ function App() {
       <Row align="end">
         <Col md="auto">
           <iframe id="book" style={{border: "2px solid black", height: "90vh", width: "50vw"}} 
-          src="https://www.gutenberg.org/cache/epub/73011/pg73011-images.html"></iframe>
+          src="http://localhost:8000"></iframe>
         </Col>
         <Col>
           <Stack>
