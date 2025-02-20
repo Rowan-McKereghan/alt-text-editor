@@ -2,12 +2,12 @@ import { createServer } from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const hostname = '0.0.0.0';
+const hostname = 'localhost';
 const port = 8000;
 
 const server = createServer((req, res) => {
     let filePath = '.' + req.url;
-    if (filePath === './') {
+    if (filePath === './' || req.url.startsWith('/iframe')) {
         filePath = './index.html'; // Default to serving index.html
     }
     const extname = path.extname(filePath);

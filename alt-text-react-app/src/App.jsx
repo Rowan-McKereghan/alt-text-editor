@@ -12,18 +12,21 @@ import Bookpage from './Bookpage';
 
 
 function App() {
+
+  const [altText, setAltText] = useState('');
+
   return (
-    <Container fluid style={{height: '90vh'}}>
+    <Container fluid>
       <Row align="end">
         <Col md="auto">
-          <iframe id="book" style={{border: "2px solid black", height: "90vh", width: "50vw"}} 
-          src="http://localhost:8000"></iframe>
+          <iframe id="book" style={{height: "90vh", width: "45vw"}} className="border border-secondary border-4" src="/iframe"></iframe>
         </Col>
         <Col>
-          <Stack>
-            <Bookpage/>
+          <Stack className='gap-3'>
+            <Bookpage altOnClick={(text) => {setAltText(text)}}/>
+            <Form.Label className='align-self-start mb-0' htmlFor="basic-url">Existing Alt Text</Form.Label>
             <InputGroup>
-              <Form.Control placeholder="existing alt text"></Form.Control>
+              <Form.Control disabled as='textarea' rows={4} value={altText}></Form.Control>
             </InputGroup>
             <InputGroup>
               <Form.Control placeholder="ai suggestion"></Form.Control>
