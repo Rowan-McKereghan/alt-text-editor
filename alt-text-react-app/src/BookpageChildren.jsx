@@ -1,9 +1,9 @@
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import ImgElementsRow from './ImgElementsRow';
 
 import { useState, useEffect } from 'react';
+
 
 export default function BookpageChildren({altOnClick}) {
 
@@ -33,19 +33,7 @@ export default function BookpageChildren({altOnClick}) {
 
         <Accordion.Body style={{"textAlign": "center", "overflowY": "scroll", "scrollbarColor": "#00000080 rgba(255, 255, 255, 0.87)", "maxHeight": "40vh"}}>
             <Container style={{"minWidth": "100%", "width": "0"}}>
-                <Row className='align-items-center'>
-                {imgElements.map((img, index) => (
-                    <Col className='px-2 py-2' key={index + 1}>
-                        <img onClick={() => {
-                            img.scrollIntoView({behavior: "smooth", block: "center"});
-                            altOnClick(img.alt);
-                            }} 
-                        id={"list_" + img.id} src={img.src} alt={img.alt} 
-                        className="img-thumbnail border border-primary-subtle" 
-                        style={{"maxWidth": "200px", "height": "auto"}} />
-                    </Col>
-                ))}
-                </Row>
+                <ImgElementsRow imgElements={imgElements} altOnClick={altOnClick}/>
             </Container>
         </Accordion.Body>
     );

@@ -24,15 +24,15 @@ function App() {
         <Col>
           <Stack className='gap-3'>
             <Bookpage altOnClick={(text) => {setAltText(text)}}/>
-            <Form.Label className='align-self-start mb-0' htmlFor="basic-url">Existing Alt Text</Form.Label>
+            <Form.Label className='align-self-start mb-0' htmlFor="altText">Existing Alt Text</Form.Label>
             <InputGroup>
-              <Form.Control disabled as='textarea' rows={4} value={altText}></Form.Control>
+              <Form.Control id="altText" disabled as='textarea' rows={4} value={altText}></Form.Control>
             </InputGroup>
             <InputGroup>
-              <Form.Control placeholder="ai suggestion"></Form.Control>
+              <Form.Control id="ai" placeholder="ai suggestion"></Form.Control>
             </InputGroup>
             <InputGroup>
-              <Form.Control placeholder="user input"></Form.Control>
+              <Form.Control id="userInput" placeholder="user input"></Form.Control>
             </InputGroup>
             <Button>
                 Submit
