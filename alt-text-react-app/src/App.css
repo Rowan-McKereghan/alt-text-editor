@@ -21,20 +21,21 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  25%, 75% {
+    opacity: 0;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.flash {
+  animation-name: flash;
+  animation: flash 1s linear;
 }
+
+
 
 .card {
   padding: 2em;

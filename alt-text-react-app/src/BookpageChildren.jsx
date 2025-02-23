@@ -19,7 +19,7 @@ export default function BookpageChildren({altOnClick, setNumImgs, setNumSelected
                 if(imgArr.length !== 0) {
                     setImgElements(imgArr);
                     setNumImgs(imgArr.length);
-                    setNumSelected(1);
+                    setNumSelected(0);
                 }
             } catch (error) {
                 console.error("Error accessing iframe content:", error);
@@ -36,7 +36,7 @@ export default function BookpageChildren({altOnClick, setNumImgs, setNumSelected
 
     return (
 
-        <Accordion.Body style={{"textAlign": "center", "overflowY": "scroll", "scrollbarColor": "#00000080 rgba(255, 255, 255, 0.87)", "maxHeight": "40vh"}}>
+        <Accordion.Body className="overflow-scroll" style={{"textAlign": "center", "scrollbarColor": "#00000080 rgba(255, 255, 255, 0.87)", "maxHeight": "40vh"}}>
             <Container style={{"minWidth": "100%", "width": "0"}}>
                 <ImgElementsRow imgElements={imgElements} altOnClick={altOnClick} setNumSelected={setNumSelected}/>
             </Container>

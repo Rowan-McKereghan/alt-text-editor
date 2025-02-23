@@ -16,17 +16,18 @@ function App() {
   const [altText, setAltText] = useState('');
   const [numSelected, setNumSelected] = useState(0);
   const [numImgs, setNumImgs] = useState(0);
+  //const [b, bb] = useState(HTMLImageElement);
 
   const leftButtonClick = () => {
     if (numSelected <= 1) {return;}
     let r = document.getElementById("list_row").children;
-    document.getElementById(r[numSelected - 2].children[0].id).click();
+    r[numSelected - 2].querySelector("img").click();
   }
 
   const rightButtonClick = () => {
-    if (numSelected <= 1) {return;}
+    if (numSelected >= numImgs) {return;}
     let r = document.getElementById("list_row").children;
-    document.getElementById(r[numSelected ].children[0].id).click();
+    r[numSelected].querySelector("img").click();
   }
 
   return (
