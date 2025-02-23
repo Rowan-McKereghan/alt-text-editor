@@ -8,6 +8,12 @@
   
 }
 
+.btn-check {
+  position: fixed !important;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -37,7 +37,7 @@ export default function BookpageChildren({altOnClick, setNumImgs, setNumSelected
     return (
 
         <Accordion.Body className="overflow-scroll" style={{"textAlign": "center", "scrollbarColor": "#00000080 rgba(255, 255, 255, 0.87)", "maxHeight": "40vh"}}>
-            <Container style={{"minWidth": "100%", "width": "0"}}>
+            <Container style={{"minWidth": "100%", "width": "0", "height": "40vh"}}>
                 <ImgElementsRow imgElements={imgElements} altOnClick={altOnClick} setNumSelected={setNumSelected}/>
             </Container>
         </Accordion.Body>
