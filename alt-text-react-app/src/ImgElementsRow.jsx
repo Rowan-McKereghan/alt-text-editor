@@ -14,6 +14,7 @@ export default function ImgElementsRow({altOnClick, imgElements, setNumSelected}
     return(
         <Row className='align-items-center overflow-scroll' style={{"maxWidth": "100%", overflowX: "auto"}} id="list_row">
             {imgElements.map((img, index) => {
+                img.style.cursor = 'pointer';
                 img.addEventListener('click', () => {
                     const listImg = document.getElementById("list_" + img.id);
                     listImg.click();

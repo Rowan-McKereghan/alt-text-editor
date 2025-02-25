@@ -1,4 +1,4 @@
-import { useState, Children } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
@@ -7,16 +7,17 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import 'bootstrap/dist/css/bootstrap.css';
 import Bookpage from './Bookpage';
+import NavbarDiv from './NavbarDiv';
 
-// add floating labels?
+
 function App() {
 
   const [altText, setAltText] = useState('');
   const [numSelected, setNumSelected] = useState(0);
   const [numImgs, setNumImgs] = useState(0);
-  //const [b, bb] = useState(HTMLImageElement);
 
   const leftButtonClick = () => {
     if (numSelected <= 1) {return;}
@@ -31,7 +32,9 @@ function App() {
   }
 
   return (
-    <Container fluid>
+    <>
+    <NavbarDiv/>
+    <Container fluid className='px-4 py-2'>
       <Row align="end">
         <Col className=''>
           <Stack className='gap-3'>
@@ -48,15 +51,16 @@ function App() {
                 </svg>
               </Button>
             </InputGroup>
-            <iframe id="book" style={{height: "85vh", width: "auto"}} className="border border-secondary border-4" src="/iframe"></iframe>
+            <iframe id="book" style={{height: "80vh", width: "auto"}} className="border border-secondary border-4" src="/iframe"></iframe>
           </Stack>
         </Col>
         <Col>
           <Stack className='gap-3'>
             <Bookpage altOnClick={(text) => {setAltText(text)}} setNumImgs={setNumImgs} setNumSelected={setNumSelected}/>
-            <Form.Label className='align-self-start mb-0' htmlFor="altText">Existing Alt Text</Form.Label>
             <InputGroup>
-              <Form.Control id="altText" disabled as='textarea' rows={4} value={altText}></Form.Control>
+              <FloatingLabel label="Existing Alt Text">
+                <Form.Control id="altText" disabled as='textarea' style={{"height": "100px"}} value={altText}></Form.Control>
+              </FloatingLabel>
             </InputGroup>
             <InputGroup>
               <Form.Control id="ai" placeholder="ai suggestion"></Form.Control>
@@ -71,6 +75,7 @@ function App() {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
 
