@@ -12,9 +12,10 @@ const server = createServer((req, res) => {
     }
     const extname = path.extname(filePath);
     let contentType = 'text/html';
-    if(extname === ".jpg") {
+    if(extname === ".jpg") { //if image change type
         contentType = 'image/jpeg';
     }
+    //read file and write to server
     fs.readFile(filePath, (err, content) => {
         if (err) {
             if (err.code === 'ENOENT') {
