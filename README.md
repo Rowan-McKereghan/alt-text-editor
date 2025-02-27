@@ -41,9 +41,8 @@ I'm using NodeJS v22.13.1 and npm v10.9.2 for this project. Older versions shoul
 
 1. Clone the repo and open terminal/CLI ("terminal 1") at `alt-text-react-app` directory. Make sure you have NodeJS and npm installed.
     1. Run `npm install` in terminal 1.
-
 2. Open separate terminal ("terminal 2") at `alt-text-test-server` directory.
-    1. a. Run `node webserver.js` in terminal 2.
+    1. Run `node webserver.js` in terminal 2.
 3. Run `npm run dev` in terminal 1.
 4. You should now be able to access the React app at [http://localhost:5173/](http://localhost:5173/) on your machine in a browser.
 
