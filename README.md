@@ -39,17 +39,13 @@ Free Ebook Foundation alt text PG react app
 
 I'm using NodeJS v22.13.1 and npm v10.9.2 for this project. Older versions shouldn't matter unless they're really old but if there's issues compiling or executing I'm putting this here for reference. I'm not using Docker because proxy server communication doesn't work between containers, so you'll have to run it locally. 
 
-- 1. Clone the repo and open terminal/CLI ("terminal 1") at `alt-text-react-app` directory. Make sure you have NodeJS and npm installed.
+1. Clone the repo and open terminal/CLI ("terminal 1") at `alt-text-react-app` directory. Make sure you have NodeJS and npm installed.
+    1. Run `npm install` in terminal 1.
 
-    - Run `npm install` in terminal 1.
-
-- 2. Open separate terminal ("terminal 2") at `alt-text-test-server` directory.
-
-    - a. Run `node webserver.js` in terminal 2.
-
-- 3. Run `npm run dev` in terminal 1.
-
-- 4. You should now be able to access the React app at [http://localhost:5173/](http://localhost:5173/) on your machine in a browser.
+2. Open separate terminal ("terminal 2") at `alt-text-test-server` directory.
+    1. a. Run `node webserver.js` in terminal 2.
+3. Run `npm run dev` in terminal 1.
+4. You should now be able to access the React app at [http://localhost:5173/](http://localhost:5173/) on your machine in a browser.
 
 ## NodeJS proxy server and how it works with React and Vite
 
