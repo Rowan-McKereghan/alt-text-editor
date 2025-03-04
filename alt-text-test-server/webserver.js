@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const hostname = 'localhost';
-const port = 8000;
+const port = 8080;
 
 const server = createServer((req, res) => {
     let filePath = '.' + req.url;
