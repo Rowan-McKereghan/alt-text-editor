@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
@@ -19,15 +19,18 @@ function App() {
   const [numSelected, setNumSelected] = useState(0);
   const [numImgs, setNumImgs] = useState(0);
 
+  const iframe = useRef();
+  const list_row = useRef();
+
   const leftButtonClick = () => {
     if (numSelected <= 1) {return;}
-    let r = document.getElementById("list_row").children;
+    let r = list_row.current.children;
     r[numSelected - 2].querySelector("img").click();
   }
 
   const rightButtonClick = () => {
     if (numSelected >= numImgs) {return;}
-    let r = document.getElementById("list_row").children;
+    let r = list_row.current.children;
     r[numSelected].querySelector("img").click();
   }
 
@@ -51,12 +54,12 @@ function App() {
                 </svg>
               </Button>
             </InputGroup>
-            <iframe id="book" style={{height: "80vh", width: "auto"}} className="border border-secondary border-4" src="/iframe"></iframe>
+            <iframe ref={iframe} id="book" style={{height: "80vh", width: "auto"}} className="border border-secondary border-4" src="/iframe"></iframe>
           </Stack>
         </Col>
         <Col>
           <Stack className='gap-3'>
-            <Bookpage altOnClick={(text) => {setAltText(text)}} setNumImgs={setNumImgs} setNumSelected={setNumSelected}/>
+            <Bookpage altOnClick={(text) => {setAltText(text)}} listRef={list_row} iframeRef={iframe} setNumImgs={setNumImgs} setNumSelected={setNumSelected}/>
             <InputGroup>
               <FloatingLabel label="Existing Alt Text">
                 <Form.Control id="altText" disabled as='textarea' style={{"height": "100px"}} value={altText}></Form.Control>
