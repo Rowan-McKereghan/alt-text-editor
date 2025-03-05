@@ -8,13 +8,13 @@ export default defineConfig({
     port: 5173,
     proxy: { //redirect file requests to node js webserver.
       "/iframe": {
-        target: "http://localhost:8080",
+        target: "http://127.0.0.1:8080",
         secure: false,
         changeOrigin: true,
         ws: true
       },
       "/images": {
-        target: "http://localhost:8080",
+        target: "http://127.0.0.1:8080",
         secure: false,
         changeOrigin: true,
         ws: true
