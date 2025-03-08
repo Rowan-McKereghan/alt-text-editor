@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
@@ -18,6 +18,16 @@ function App() {
   const [altText, setAltText] = useState('');
   const [numSelected, setNumSelected] = useState(0);
   const [numImgs, setNumImgs] = useState(0);
+
+  const userText = useRef(null);
+
+  const updateAltText = () => {
+    if(userText.current.value !== null) {
+      let r = document.getElementById("list_row").children;
+      r[numSelected - 1].querySelector("img").alt = userText.current.value;
+      setAltText(userText.current.value);
+    }
+  }
 
   const leftButtonClick = () => {
     if (numSelected <= 1) {return;}
@@ -66,11 +76,22 @@ function App() {
               <Form.Control id="ai" placeholder="ai suggestion"></Form.Control>
             </InputGroup>
             <InputGroup>
-              <Form.Control id="userInput" placeholder="user input"></Form.Control>
+              <Form.Control id="userInput" ref={userText} placeholder="user input"></Form.Control>
             </InputGroup>
-            <Button>
-                Submit
-            </Button>
+            <Container className='px-0'>
+              <Row>
+                <Col className='d-grid'>
+                  <Button onClick={updateAltText}>
+                      Save
+                  </Button>
+                </Col>
+                <Col className='d-grid'>
+                  <Button>
+                      Submit
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
           </Stack>
         </Col>
       </Row>

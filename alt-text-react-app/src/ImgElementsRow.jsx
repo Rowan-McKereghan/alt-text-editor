@@ -15,8 +15,8 @@ export default function ImgElementsRow({altOnClick, imgElements, setNumSelected}
         <Row className='align-items-center overflow-scroll' style={{"maxWidth": "100%", overflowX: "auto"}} id="list_row">
             {imgElements.map((img, index) => {
                 img.style.cursor = 'pointer';
+                const listImg = document.getElementById("list_" + img.id);
                 img.addEventListener('click', () => {
-                    const listImg = document.getElementById("list_" + img.id);
                     listImg.click();
                 });
                 return (
@@ -28,7 +28,8 @@ export default function ImgElementsRow({altOnClick, imgElements, setNumSelected}
                             e.currentTarget.scrollIntoView({behavior: "smooth", block: "center"});
                             document.getElementById("book").classList.remove("flash");
                             setTimeout(function() {document.getElementById("book").classList.add("flash")}, 100);
-                            altOnClick(img.alt);
+                            if(listImg !== null) {altOnClick(listImg.alt);}
+                            else {altOnClick(img.alt);}
                             setNumSelected(index + 1);
                         }}>
                         <img id={"list_" + img.id} src={img.src} alt={img.alt} className="rounded" 
