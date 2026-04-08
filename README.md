@@ -35,6 +35,10 @@ Free Ebook Foundation alt text PG react app
   </ol>
 </details>
 
+## Sample Image
+
+[![Editor view](altpoet_editor.jpg)]
+
 ## Setting up React app
 
 I'm using NodeJS v22.13.1 and npm v10.9.2 for this project. Older versions shouldn't matter unless they're really old but if there's issues compiling or executing I'm putting this here for reference. I'm not using Docker because proxy server communication doesn't work between containers, so you'll have to run it locally. 
