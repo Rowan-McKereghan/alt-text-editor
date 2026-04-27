@@ -24,7 +24,7 @@ Made for volunteers and alt text writers to easily create alt texts for Project 
 
 ## Set Up Altpoet Backend
 
-This project requires you already have the <b>[Altpoet backend](https://github.com/EbookFoundation/altpoet)</b> running locally, and assumes it is serving endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). You can change what URL and port the React app looks for in `alt-text-react-app/.env` by changing the `DATABASE_URL` variable. 
+This project requires you already have the <b>[Altpoet backend](https://github.com/gutenbergtools/altpoet)</b> running locally, and assumes it is serving endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). You can change what URL and port the React app looks for in `alt-text-react-app/.env` by changing the `DATABASE_URL` variable. 
 
 NOTE: You will need to create a user and be logged in to your local instance of the Altpoet backend as well.
 
