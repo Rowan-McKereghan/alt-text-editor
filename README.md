@@ -24,7 +24,7 @@ Made for volunteers and alt text writers to easily create alt texts for Project 
 
 ## Set Up Altpoet Backend
 
-This project requires you already have the <b>[Altpoet backend](https://github.com/EbookFoundation/altpoet)</b> running locally, and assumes it is serving endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). You can change what URL and port the React app looks for in `alt-text-react-app/.env` by changing the `DATABASE_URL` variable. 
+This project requires you already have the <b>[Altpoet backend](https://github.com/gutenbergtools/altpoet)</b> running locally, and assumes it is serving endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). You can change what URL and port the React app looks for in `alt-text-react-app/.env` by changing the `DATABASE_URL` variable. 
 
 NOTE: You will need to create a user and be logged in to your local instance of the Altpoet backend as well.
 
@@ -33,7 +33,7 @@ NOTE: You will need to create a user and be logged in to your local instance of 
 `alt-text-react-app` uses NodeJS v22.13.1 and npm v10.9.2 for this project. Older (or newer) versions shouldn't matter unless they're really old but if there's issues compiling or executing the version numbers are here for reference. Docker <i> is not </i> an option because proxy server communication doesn't work between containers, so you'll have to run it locally. Instructions to do so are as follows:
 
 Clone the repo and open terminal/CLI ("terminal 1") in `alt-text-react-app` directory. Make sure you have NodeJS and npm installed. In order, that's as follows:
-   1. `git clone git@github.com:EbookFoundation/alt-text-editor.git`
+   1. `git clone git@github.com:gutenbergtools/alt-text-editor.git`
    2. `cd alt-text-editor/alt-text-react-app`
    3. `npm install`
    
